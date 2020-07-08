@@ -82,12 +82,12 @@ if(!valid) return res.status(400).json(errors);
     })
     .catch((err)=>{
         console.error(err);
-        if(err.code ==='auth/wrong-password')
+        if(err.code ==='auth/wrong-password'|| err.code === 'auth/user-not-found')
         {
             return res.status(403).json({general:'wrong credentials please try again'});
         }
         else    
-        return res.status(500).json({error:err.code});
+        return res.status(500).json({general:err.code});
     });
     };
 

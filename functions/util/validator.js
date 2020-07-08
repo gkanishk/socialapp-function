@@ -53,7 +53,7 @@ exports.reduceUserDetails=(data)=>{
         if(data.website.trim().substring(0,4)!=='http'){
             userDetails.website=`http://${data.website.trim()}`;
             }
-            else userDetails.website.data.website;
+            else userDetails.website=data.website;
     }
     if(!isEmpty(data.location.trim())) userDetails.location=data.location;
     return userDetails;

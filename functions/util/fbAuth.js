@@ -25,5 +25,5 @@ module.exports=(req,res,next)=>{
     .catch(err=>{
         console.error('Error whil            e verifying token',err);
         return res.status(403).json(err);
-    })
+    });
 }

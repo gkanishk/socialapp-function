@@ -3,6 +3,10 @@ const app=require('express')();
 const {getAllScreams,postOneScream,getScream,commentOnScream,likeScream,unlikeScream,deleteScream}=require('./handlers/screams');
 const {signUp,login,uploadImage,addUserDetails,getAuthenticatedUser,markNotificationRead,getUserDetail}=require('./handlers/users');
 const FBAuth=require("./util/fbAuth");
+
+const cors=require('cors');
+app.use(cors());
+
 const {db}=require('./util/admin');
 //Scream route
 app.get('/screams',getAllScreams);
